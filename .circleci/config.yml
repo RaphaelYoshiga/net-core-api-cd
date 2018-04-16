@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - checkout
-
-      - run:
-          name: Docker Compose
-          command: docker-compose  -f "C:\GitHub\net-core-api-cd\docker-compose.yml" -f "C:\GitHub\net-core-api-cd\docker-compose.override.yml" -f "C:\GitHub\net-core-api-cd\obj\Docker\docker-compose.vs.debug.g.yml" -p dockercompose2862132963656988669 up -d --force-recreate --remove-orphans
+      
+      - run: dotnet restore
+      - run: dotnet build
+          
