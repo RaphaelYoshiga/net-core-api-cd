@@ -21,4 +21,4 @@ jobs:
           # This approach feels faster then the provided as example on Docker website using multi-staged builds.
           # https://docs.docker.com/engine/examples/dotnetcore/
           
-          cp Dockerfile DockerNetCore.Api/bin/Release/netcoreapp2.0/publish/
+          cp DockerNetCore.Api/Dockerfile DockerNetCore.Api/bin/Release/netcoreapp2.0/publish/
