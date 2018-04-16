@@ -14,4 +14,11 @@ jobs:
       - run: dotnet restore
       - run: dotnet build
       - run: dotnet test DockerNetCore.Tests/
+      - run: dotnet publish DockerNetCore.Api/DockerNetCore.Api.csproj -c Release -f netcoreapp2.0          
+      - setup_remote_docker
+
+      - run: |
+          # This approach feels faster then the provided as example on Docker website using multi-staged builds.
+          # https://docs.docker.com/engine/examples/dotnetcore/
           
+          cp Dockerfile DockerNetCore.Api/bin/Release/netcoreapp2.0/publish/
