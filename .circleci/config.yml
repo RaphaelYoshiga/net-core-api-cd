@@ -10,5 +10,5 @@ jobs:
       - checkout
 
       - run:
-          name: NUnit Tests
-          command: dotnet restore DockerNetCore.Api.sln
+          name: Docker Compose
+          command: docker-compose  -f "C:\GitHub\net-core-api-cd\docker-compose.yml" -f "C:\GitHub\net-core-api-cd\docker-compose.override.yml" -f "C:\GitHub\net-core-api-cd\obj\Docker\docker-compose.vs.debug.g.yml" -p dockercompose2862132963656988669 up -d --force-recreate --remove-orphans
